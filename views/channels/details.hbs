@@ -1,0 +1,34 @@
+{{partial "header"}}
+
+
+<main class="container-fluid my-4">
+    <section class="container">
+        <h1>You channel details will appear here.</h1>
+        <p>You can even view all collections for your channel or all movies uploaded to channel.</p>
+
+        {{#if channel}}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Channel Name</th>
+                    <th>Channel Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{channel.name}}</td>
+                    <td>{{channel.summary}}</td>
+                    <td>
+                        <a class="btn btn-outline-primary btn-sm mx-2" href="/collections/list/{{channel.slug}}">View
+                            collections</a>
+                        <a class="btn btn-outline-primary btn-sm mx-2" href="/movies/list/channel/{{channel.slug}}">View
+                            movies</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        {{/if}}
+
+    </section>
+</main>

@@ -1,0 +1,51 @@
+{
+  "name": "dbharat-movies",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A monorepo to hold our project, similar to youtube. It's a great starting point to learn how complex technologies works. We will be adding more and more codebase to this repo over time.",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "rm -rf dist && tsc",
+    "watch": "rm -rf dist && tsc -w",
+    "dev": "nodemon",
+    "migration:create": "yarn typeorm migration:create"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/developbharat/dbharat-movies.git"
+  },
+  "keywords": [],
+  "author": "Jayant Malik <dev.jayantmalik@gmail.com> (https://developbharat.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/developbharat/dbharat-movies/issues"
+  },
+  "homepage": "https://github.com/developbharat/dbharat-movies#readme",
+  "dependencies": {
+    "argon2": "^0.27.1",
+    "connect-redis": "^5.0.0",
+    "dotenv-safe": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "handlebars": "^4.7.6",
+    "joi": "^17.3.0",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1",
+    "redis": "^3.0.2",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.29"
+  },
+  "devDependencies": {
+    "@types/connect-redis": "^0.0.16",
+    "@types/dotenv-safe": "^8.1.1",
+    "@types/express": "^4.17.9",
+    "@types/express-session": "^1.17.3",
+    "@types/joi": "^14.3.4",
+    "@types/multer": "^1.4.5",
+    "@types/node": "^14.14.20",
+    "@types/redis": "^2.8.28",
+    "nodemon": "^2.0.6",
+    "typescript": "^4.1.3"
+  }
+}

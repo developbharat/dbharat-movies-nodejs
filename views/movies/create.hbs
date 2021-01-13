@@ -1,0 +1,60 @@
+{{partial "header"}}
+
+<main class="container-fluid my-4">
+    <section class="container">
+        <h2>Create new movie.</h2>
+        <p>You can create new movie here. Provide us details and you will be good to go.</p>
+
+
+        <form action="/movies/create" method="POST" enctype="multipart/form-data">
+            <fieldset class="form-group">
+                <label for="name">Movie name</label>
+                <input class="form-control" type="text" name="name" id="name" required />
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="upload">Select movie to upload.</label>
+                <input class="form-control" type="file" name="upload" id="upload" />
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="plot">Movie Plot or description</label>
+                <textarea class="form-control" rows="5" name="plot" id="plot" required></textarea>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="categoryId">Select Category</label>
+                <select class="form-control" name="categoryId" id="categoryId" required>
+                    {{#each categories}}
+                    <option value="{{this.id}}">{{this.title}}</option>
+                    {{/each}}
+                </select>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="channelId">Select Channel for movie</label>
+                <select class="form-control" name="channelId" id="channelId" required>
+                    {{#each channels}}
+                    <option value="{{this.id}}">{{this.name}}</option>
+                    {{/each}}
+                </select>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="collectionId">Select Your movie collection</label>
+                <select name="collectionId" id="collectionId" class="form-control">
+                    {{#each collections}}
+                    <option value="{{this.id}}">{{this.name}}</option>
+                    {{/each}}
+                </select>
+            </fieldset>
+            <fieldset class="form-group">
+                <input type="checkbox" name="isPublished" id="isPublished" />
+                <label for="isPublished">Do you want to publish immediately?</label>
+            </fieldset>
+            <fieldset class="form-group">
+                <input type="checkbox" name="isPublic" id="isPublic" />
+                <label for="isPublic">Do you want to make your movie publically available?</label>
+            </fieldset>
+            <fieldset class="form-group">
+                <button type="submit" class="btn btn-primary btn-sm">Add your video</button>
+                <button type="reset" class="btn btn-secondary btn-sm">Reset Form</button>
+            </fieldset>
+        </form>
+    </section>
+</main>

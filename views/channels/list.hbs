@@ -1,0 +1,32 @@
+{{partial "header"}}
+
+<main class="container-fluid my-4">
+    <section class="container">
+        <h2>Your channels will appear here.</h2>
+
+        {{#each channels}}
+        <article class="card m-3">
+            <div class="card-body">
+                <h3>{{this.name}}</h3>
+                <p>{{this.summary}}</p>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-success" href="/channels/details/{{this.slug}}">View details.</a>
+            </div>
+        </article>
+        {{/each}}
+
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                {{#if nextPage}}
+                <li class="page-item"><a class="page-link" href="?page={{nextPage}}">Next</a></li>
+                {{/if}}
+                {{#if previousPage}}
+                <li class="page-item"><a class="page-link" href="?page={{previousPage}}">Previous Page</a></li>
+                {{/if}}
+            </ul>
+        </nav>
+
+    </section>
+</main>

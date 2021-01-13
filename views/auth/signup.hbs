@@ -1,0 +1,41 @@
+{{partial "partials/header"}}
+
+<main class="container-fluid my-4">
+    <section class="container my-4">
+        <h2>Create new account.</h2>
+        <p>Please provide us your details to create new account.</p>
+        <form action="/auth/signup" method="POST">
+            <fieldset class="form-group">
+                <label for="fullname">Your Full name</label>
+                <input class="form-control" type="text" name="fullname" id="fullname" required
+                    placeholder="e.g. Jayant Malik" />
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="username">Your Username</label>
+                <input class="form-control" type="text" name="username" id="username" required
+                    placeholder="e.g jayantmalik23" />
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="email">Your Email address</label>
+                <input class="form-control" type="email" name="email" id="email" required
+                    placeholder="e.g contact@dbharat.com" />
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="password">Your Password</label>
+                <input class="form-control" type="password" name="password" id="password" required />
+            </fieldset>
+            <fieldset class="form-group">
+                <button class="btn btn-primary btn-sm" type="submit">Proceed to signup</button>
+                <button class="btn btn-secondary btn-sm" type="reset">Reset Form details</button>
+            </fieldset>
+        </form>
+
+        <nav class="nav my-3">
+            <ul class="nav">
+                <li class="nav-item"><a href="/auth/signin" class="nav-link">Already have an account? Go to signin
+                        page.</a></li>
+            </ul>
+        </nav>
+    </section>
+
+</main>

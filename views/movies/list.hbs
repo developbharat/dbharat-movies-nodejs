@@ -1,0 +1,35 @@
+{{partial "header"}}
+
+<main class="container-fluid my-4">
+    <section class="container my-3">
+        <h2>All your all movies for channel or collection will appear here.</h2>
+        <p>You will be able to view videos for channel and collection as per your choice on this same page.</p>
+
+        <p>Here are videos for your channel or your collection as per your request: </p>
+
+
+        {{#each movies}}
+        <article class="card m-3">
+            <div class="card-body">
+                <h3 class="card-title">{{this.name}}</h3>
+                <p>{{this.plot}}</p>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-success btn-sm" href="/movies/details/{{this.id}}">See details</a>
+            </div>
+        </article>
+        {{/each}}
+    </section>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination mt-4">
+            {{#if nextPage}}
+            <li class="page-item"><a class="page-link" href="?page={{nextPage}}">Next</a></li>
+            {{/if}}
+            {{#if previousPage}}
+            <li class="page-item"><a class="page-link" href="?page={{previousPage}}">Previous Page</a></li>
+            {{/if}}
+        </ul>
+    </nav>
+
+</main>

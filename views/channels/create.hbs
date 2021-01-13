@@ -1,0 +1,30 @@
+{{partial "header"}}
+
+
+<main class="container-fluid my-4">
+
+
+    <section class="container">
+        <h2>Create new channel.</h2>
+        <p>You can create new channel via this page.</p>
+        <form action="/channels/create" method="POST">
+            <fieldset class="form-group">
+                <label for="name">Channel name</label>
+                <input class="form-control" type="text" name="name" id="name" />
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="slug">Unique Channel slug</label>
+                <input class="form-control" type="text" name="slug" id="slug" />
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label for="summary">Your channel description or summary</label>
+                <textarea class="form-control" rows="5" maxlength="1000" name="summary" id="summary"></textarea>
+            </fieldset>
+            <fieldset class="form-group">
+                <button class="btn-primary btn-sm" type="submit">Submit</button>
+                <button class="btn-secondary btn-sm" type="reset">Reset Form</button>
+            </fieldset>
+        </form>
+    </section>
+</main>

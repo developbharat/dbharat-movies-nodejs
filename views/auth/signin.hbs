@@ -1,0 +1,47 @@
+{{partial "partials/header"}}
+
+
+<main class="container-fluid my-4">
+    <section class="container">
+        <h2>Signin using your credentials.</h2>
+        <p>You can either login via email or via username.</p>
+        <form action="/auth/signin" method="POST">
+            <fieldset class="form-group">
+                <label for="username">Your Username</label>
+                <input class="form-control" type="text" name="username" id="username" required />
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="password">Your Password</label>
+                <input class="form-control" type="password" name="password" id="password" required />
+            </fieldset>
+            <fieldset class="form-group">
+                <button class="btn btn-primary btn-sm" type="submit">Proceed to login</button>
+                <button class="btn btn-secondary btn-sm" type="reset">Reset Form details</button>
+            </fieldset>
+        </form>
+
+        <nav class="nav my-3">
+            <ul class="nav">
+                <li class="nav-item"><a href="/auth/signup" class="nav-link">Create new account</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section class="container my-4">
+        <h2>Or You can login via email.</h2>
+        <form action="/auth/signin" method="POST">
+            <fieldset class="form-group">
+                <label for="email">Your Email</label>
+                <input class="form-control" type="text" name="email" id="email" required />
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="password">Your Password</label>
+                <input class="form-control" type="password" name="password" id="password" required />
+            </fieldset>
+            <fieldset class="form-group">
+                <button class="btn btn-primary btn-sm" type="submit">Proceed to login</button>
+                <button class="btn btn-secondary" type="reset">Reset Form details</button>
+            </fieldset>
+        </form>
+    </section>
+</main>

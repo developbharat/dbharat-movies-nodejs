@@ -1,0 +1,32 @@
+{{partial "header"}}
+
+<main class="container-fluid my-3">
+    <section class="container">
+        <h2>Create new collection</h2>
+        <p>You can create new collection using this page.</p>
+
+        <form action="/collections/create" method="POST">
+            <fieldset class="form-group">
+                <label for="channelId">Select your channel</label>
+                <select name="channelId" id="channelId" class="form-control">
+                    {{#each channels}}
+                    <option value="{{this.id}}">{{this.name}}</option>
+                    {{/each}}
+                </select>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="name">Your collection name</label>
+                <input type="text" class="form-control" id="name" name="name" />
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="summary">Your collection description or summary</label>
+                <textarea rows="6" id="summary" name="summary" class="form-control"></textarea>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <button type="submit" class="btn btn-primary btn-sm">Create collection</button>
+                <button type="reset" class="btn btn-secondary btn-sm">Reset Form</button>
+            </fieldset>
+        </form>
+    </section>
+</main>

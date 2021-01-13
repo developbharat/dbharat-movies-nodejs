@@ -1,0 +1,13 @@
+{{partial "header"}}
+
+<main class="container-fluid">
+    <section class="container">
+        <h1>Your movie details will appear here.</h1>
+
+        <p>You can watch movie on this page...</p>
+
+        {{#if movie}}
+        <video src="/{{movie.filename}}.mp4" controls></video>
+        {{/if}}
+    </section>
+</main>
